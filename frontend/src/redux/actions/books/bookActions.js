@@ -21,11 +21,7 @@ const createBookAction = (bookData) => {
       };
 
       //due to setting  "proxy": "http://localhost:5000" in package.json, no need to type whole url here
-      const { data } = await axios.post(
-        "/api/books",
-        bookData,
-        config
-      );
+      const { data } = await axios.post("/api/books", bookData, config);
 
       dispatch({
         type: CREATE_BOOK_SUCCESS,
@@ -55,7 +51,10 @@ const fetchBooksAction = () => {
       };
 
       //make http request to backend
-      const { data } = await axios.get("http://localhost:5000/api/books", config);
+      const { data } = await axios.get(
+        "http://localhost:5000/api/books",
+        config
+      );
 
       dispatch({
         type: FETCH_BOOK_SUCCESS,

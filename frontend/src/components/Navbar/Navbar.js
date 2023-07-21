@@ -1,21 +1,22 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { logoutUserAction } from '../../redux/actions/users/usersActions';
+import { logoutUserAction } from '../../redux/actions/users/userActions';
 
 const Navbar = props => {
   const state = useSelector(state => state.userLogin);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
     dispatch(logoutUserAction());
-    history.push('/');
+    navigate('/');
   };
 
   const { userInfo, loading, error } = state;
+  
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
