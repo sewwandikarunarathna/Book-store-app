@@ -21,9 +21,9 @@ const Navbar = props => {
     <header>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <a className='navbar-brand' to='/'>
-          BK
+          BookShelf
         </a>
-        <button
+        {/* <button
           className='navbar-toggler'
           type='button'
           data-toggle='collapse'
@@ -32,14 +32,14 @@ const Navbar = props => {
           aria-expanded='false'
           aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
-        </button>
+        </button> */}
 
         <div className='collapse navbar-collapse' id='navbarColor01'>
-          <ul className='navbar-nav m-auto'>
-            <li className='nav-item active'>
-              <a className='nav-link' to='/'>
+          <ul className='navbar-nav ms-auto'>
+            <li className='nav-item'>
+              <Link className='nav-link' to='/'>
                 Home <span className='sr-only'>(current)</span>
-              </a>
+              </Link>
             </li>
             {!userInfo ? (
               <>
@@ -76,7 +76,7 @@ const Navbar = props => {
                   <Link
                     onClick={logoutHandler}
                     className='nav-link'
-                    to='/login'>
+                    to='/'>
                     Logout
                   </Link>
                 </li>
