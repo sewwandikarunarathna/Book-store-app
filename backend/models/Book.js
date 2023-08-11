@@ -16,7 +16,7 @@ const bookSchema = new mongoose.Schema({
         createdBy: { //User model is ref here bcoz books created by users
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
-            required: false
+            required: true
         }
     },
     {

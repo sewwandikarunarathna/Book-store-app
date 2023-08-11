@@ -6,9 +6,17 @@ const bookRoute = express.Router();
 
 
 //create book
-bookRoute.post('/',
+bookRoute.post('/', authMiddleware, //authmiddleware is used bcoz a user should login before creating a book
     asyncHandler(async (req, res) => {
-        const book = await Book.create(req.body);
+        //grab the user ID from req.user
+        const userId = req.user._id;
+
+        const book = await Book.create({
+            category: req.body.category,
+            author: req.body.author,
+            title: req.body.title,
+            createdBy: userId
+        });
 
         if(book){
             res.status(200);

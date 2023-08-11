@@ -10,7 +10,7 @@ const Profile = ({ history }) => {
       <div className='container'>
         <div className='row'>
           <div className='col mt-5'>
-            <div className='card m-auto ' style={{ width: '50%' }}>
+            <div className='card m-auto ' style={{ width: '20%' }}>
               <img src={pic} className='card-img-top' alt='...' />
               <div className='card-body'>
                 <h5 className='card-title'>email</h5>

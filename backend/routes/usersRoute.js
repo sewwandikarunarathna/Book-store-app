@@ -92,4 +92,24 @@ usersRoute.get('/', authMiddleware, (req, res) => {
     res.send(req.user);
 })
 
+
+//profile route
+usersRoute.get('/profile', authMiddleware, 
+    asyncHandler(async(req, res) => {
+        try {
+            //with populate, books relevant to the user also can be retrieved as data
+            const user = await User.findById(req.user._id).populate('books');
+            //if user is not authorised or a new user, he hasn't profile yet
+            if(!user){
+                throw new Error("You don't have any profile yet!")
+            }
+
+            res.status(200);
+            res.send(user);
+        } catch (error) {
+            res.status(500);
+            throw new Error("Server Error"); //when geting user data, if there is wrong
+        }
+    })
+);
 module.exports = usersRoute;

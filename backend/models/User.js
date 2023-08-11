@@ -19,6 +19,15 @@ const userSchema = new mongoose.Schema({
     }
 })
 
+//populating books which are created by user (make relationship between User and Book model)
+userSchema.virtual('books', {
+    ref: 'Book',
+    foreignField: 'createdBy', //associated field of Book model
+    localField: '_id' //associated field of this model
+});
+
+userSchema.set('toJSON', {virtuals: true})
+
 //before(pre) creating User model, password is saved('save') as hash 
 //this is a middleware. next keyword is used to move to the next middleware after this
 //when updating data, if pw not modified, go to the next middleware
