@@ -152,7 +152,7 @@ export const updateUser = (name, email, password) => {
         },
       };
       const { data } = await axios.put(
-        '/api/users/profile/update',
+        '/api/users/update',
         { name, email, password },
         config
       );

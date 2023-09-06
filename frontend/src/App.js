@@ -7,6 +7,7 @@ import Register from "./components/Users/RegisterUser";
 import Login from "./components/Users/LoginUser";
 import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
+import UpdateProfile from "./components/Profile/UpdateProfile";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route exact path="/" Component={Home} />
           <Route exact path="/profile" Component={Profile} />
+          <Route exact path="/user-update" Component={UpdateProfile} />
           <Route exact path="/books" Component={Books} />
           <Route exact path="/addbook" Component={AddBook} />
           <Route exact path="/register" Component={Register} />
