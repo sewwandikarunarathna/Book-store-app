@@ -44,6 +44,8 @@ const Profile = ({ history }) => {
           {loading ? (
             <Loading />
           ) : (
+            <div className="col-lg-10 col-md-10 m-auto">
+              <h2 className="text-center" style={{ padding: "20px" }}>Your Book Collection</h2>
               <table className="table table-hover">
                 <thead>
                   <tr>
@@ -54,17 +56,17 @@ const Profile = ({ history }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {user?.books.map(book => (
+                  {user?.books.map((book) => (
                     <tr className="table-dark">
-                    <th scope="row">{book.author}</th>
-                    <td>{book.title}</td>
-                    <td>Delete</td>
-                    <td>Update</td>
-                  </tr>
+                      <th scope="row">{book.author}</th>
+                      <td>{book.title}</td>
+                      <td>Delete</td>
+                      <td>Update</td>
+                    </tr>
                   ))}
-                  
                 </tbody>
               </table>
+            </div>
           )}
         </>
       )}

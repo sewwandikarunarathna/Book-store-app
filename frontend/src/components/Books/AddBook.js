@@ -18,16 +18,20 @@ const AddBook = () => {
   };
 
   return (
-    <div className="row container-height">
-      <div className="col-lg-6 col-md-6 m-auto">
-        <div className="container">
+    <div className="container">
+      <div className="row container-height">
+        <div className="col-lg-8 col-md-8 m-auto">
+          <h1 className="text-center" style={{ padding: "20px" }}>
+            Are you willing to add a new one to the Book Shelf?
+          </h1>
           <button
+          style={{fontSize: '1.2rem', padding: '20px',  textAlign: 'center'}}
             type="button"
             className="btn btn-primary"
             data-toggle="modal"
             data-target="#exampleModal"
           >
-            Click to add Book.
+            Click to add Book!
           </button>
 
           <div

@@ -28,13 +28,13 @@ const UpdateProfile = ({ history }) => {
   };
 
   return (
+    <div className='container'>
     <div className='row container-height'>
       <div className='col-lg-6 col-md-6 m-auto'>
-        <div className='container'>
           {user && !loading && success && (
             <SuccessMessage msg='Updated successfully. Logout and login with your new credentials' />
           )}
-          <h1 className='text-center'>Update</h1>
+          <h1 className='text-center'>Update Your Profile</h1>
 
           <form onSubmit={formSubmitHandler}>
             <fieldset>

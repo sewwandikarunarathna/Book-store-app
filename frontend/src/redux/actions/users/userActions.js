@@ -172,7 +172,7 @@ export const updateUser = (name, email, password) => {
   };
 };
 
-export const fetchUsers = () => {
+export const fetchAllUsers = () => {
   return async dispatch => {
     try {
       dispatch({
@@ -184,7 +184,8 @@ export const fetchUsers = () => {
           'Content-Type': 'application/json',
         },
       };
-      const { data } = await axios.get('/api/users', config);
+      const { data } = await axios.get('/api/users/all', config);
+
       dispatch({
         type: FETCH_USERS_SUCCESS,
         payload: data,
