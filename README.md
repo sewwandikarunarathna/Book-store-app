@@ -1,5 +1,5 @@
 # Book-store-app
-Name: __BookShelf__
+Name: __BookShelf__\
 MERN stack project
 
 # Description
@@ -13,30 +13,31 @@ A web application which allows users to,
 # Screenshots
 
 ## Home Page (for new users)
-![newuser-home-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/d2cecb6f-96cc-47a9-b9d6-9d7a57b1a9cb)
+![newuser-home-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/92042f66-80de-4680-b839-18ea12174fb7)
 
 ## Home Page (for authenticated users)
-![authenticated-home-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/aa52117d-32e8-4b86-b1bf-5478092fd756)
+![authenticated-home-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/d8c1734f-3c2a-47af-9469-87630dd7788f)
 
 ## Login Page
-![login-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/bfcf6a91-59e8-4e11-992f-071f5e0ac4d7)
+![login-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/dc3ac45b-c390-4ae1-91b9-3fafb5ecad40)
 
 ## Register Page
-![register-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/9bc2ff4e-7b68-414d-959c-9fcd8aee7c8e)
+![register-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/01c7e888-c0f1-4c44-94b5-d379d8446a66)
 
 ## User Profile Page
-![profile-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/b6c20336-daf9-4f10-b384-5c68612ffaf9)
+![profile-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/c4e5c0fe-caf5-4daf-ba20-aeb7a73ddbc5)
 
-## User Profile Update Page
-![update-profile-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/b55d99fa-7585-4129-b3af-9bb1cd737129)
+## Update User Profile Page
+![update-profile-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/a6d807ab-7df1-4a8f-b698-8cd78a0449b0)
 
 ## Users Page
-![users-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/f1b5d83f-00b6-4f18-9698-2cfe951f68ef)
+![users-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/f798920c-3014-4297-92c8-fdbb6de9ef9d)
 
 ## Books Page
-![books-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/aa567c17-63ac-4c03-9fda-4f7181b98e31)
+![books-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/7adc28d2-51e7-4097-bb2b-3346d5574eba)
 
 ## Add Book Page
-![add-book-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/964b1dc4-f2dc-4248-8177-0a25d8e4f60b)
+![add-book-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/75248d8f-8323-40df-8856-210089b5f29f)
 
-
+## Update Book Page
+![update-book-page](https://github.com/sewwandikarunarathna/Book-store-app/assets/43203201/709c4a37-1eba-4aa6-94c5-d898ee7b81d2)
