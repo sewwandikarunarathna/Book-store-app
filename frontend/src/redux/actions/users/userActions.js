@@ -105,6 +105,33 @@ export const logoutUserAction = () => {
   };
 };
 
+export const fetchAllUsers = () => {
+  return async dispatch => {
+    try {
+      dispatch({
+        type: FETCH_USERS_REQUEST,
+        loading: true,
+      });
+      const config = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+      const { data } = await axios.get('/api/users/all', config);
+
+      dispatch({
+        type: FETCH_USERS_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: FETCH_USERS_FAIL,
+        error: error.response && error.response.data.message,
+      });
+    }
+  };
+};
+
 //Since this is an authenticated request that need a token we have to get the token from store and pass it to our action
 //But lucky to us dispatch takes another argument which represent all our data in our store
 
@@ -172,29 +199,3 @@ export const updateUser = (name, email, password) => {
   };
 };
 
-export const fetchAllUsers = () => {
-  return async dispatch => {
-    try {
-      dispatch({
-        type: FETCH_USERS_REQUEST,
-        loading: true,
-      });
-      const config = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      };
-      const { data } = await axios.get('/api/users/all', config);
-
-      dispatch({
-        type: FETCH_USERS_SUCCESS,
-        payload: data,
-      });
-    } catch (error) {
-      dispatch({
-        type: FETCH_USERS_FAIL,
-        error: error.response && error.response.data.message,
-      });
-    }
-  };
-};

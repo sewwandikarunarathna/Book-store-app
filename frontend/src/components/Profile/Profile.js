@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import "./Profile.css";
 import pic from "../../assets/img/read-book.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUserProfile } from "../../redux/actions/users/userActions";
 import Loading from "../Loading/Loading";
+import { deleteBookAction } from "../../redux/actions/books/bookActions";
 
 const Profile = ({ history }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getUserProfile());
@@ -15,6 +17,21 @@ const Profile = ({ history }) => {
 
   const userProfile = useSelector((state) => state.userProfile);
   const { error, loading, user } = userProfile;
+
+ // Delete book handler
+const handlerDeleteBook = (id) => {
+  dispatch(deleteBookAction(id))
+    .then(() => {
+      // After successful deletion, fetch the updated book data
+      dispatch(getUserProfile()); // or whatever action you use to fetch user profile data
+
+      alert("Book deleted successfully!");
+    })
+    .catch((error) => {
+      // Handle any errors, e.g., show an error message
+      console.error("Error deleting book:", error);
+    });
+};
 
   return (
     <>
@@ -45,23 +62,46 @@ const Profile = ({ history }) => {
             <Loading />
           ) : (
             <div className="col-lg-10 col-md-10 m-auto">
-              <h2 className="text-center" style={{ padding: "20px" }}>Your Book Collection</h2>
+              <h2 className="text-center" style={{ padding: "20px" }}>
+                Your Book Collection
+              </h2>
               <table className="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">Author</th>
                     <th scope="col">Book Name</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
                     <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
                   </tr>
                 </thead>
                 <tbody>
                   {user?.books.map((book) => (
                     <tr className="table-dark">
-                      <th scope="row">{book.author}</th>
                       <td>{book.title}</td>
-                      <td>Delete</td>
-                      <td>Update</td>
+                      <td>{book.category}</td>
+                      <td>{book.author}</td>
+                      <td>
+                        <Link to={`/update-book/${book?._id}`}>
+                          <i
+                            className="far fa-edit"
+                            style={{
+                              color: "yellow",
+                              cursor: "progress",
+                            }}
+                          ></i>
+                        </Link>
+                      </td>
+                      <td>
+                        <i
+                          onClick={() => handlerDeleteBook(book?._id)}
+                          className="fas fa-trash "
+                          style={{
+                            color: "red",
+                            cursor: "progress",
+                          }}
+                        ></i>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

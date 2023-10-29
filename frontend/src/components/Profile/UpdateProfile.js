@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import bgImage from "../../assets/img/updatepro.jpg";
 import { updateUser } from '../../redux/actions/users/userActions';
-
 import SuccessMessage from '../DisplayMessage/SuccessMessage';
 
 const UpdateProfile = ({ history }) => {
@@ -27,19 +26,38 @@ const UpdateProfile = ({ history }) => {
     dispatch(updateUser(name, email, password));
   };
 
+  // Style for the background image and centering content
+const containerStyle = {
+  backgroundImage: `url(${bgImage})`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  minHeight: "88vh",
+  display: "block",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+const buttonStyle = {
+  marginTop: "10px", // Add margin around the button
+  fontSize: "1.0em",
+  width: "25%"
+};
+
   return (
+    <div style={containerStyle}>
     <div className='container'>
     <div className='row container-height'>
       <div className='col-lg-6 col-md-6 m-auto'>
           {user && !loading && success && (
             <SuccessMessage msg='Updated successfully. Logout and login with your new credentials' />
           )}
-          <h1 className='text-center'>Update Your Profile</h1>
+          <h1 className='text-center' style={{ margin: "50px" }}>Update Your Profile</h1>
 
           <form onSubmit={formSubmitHandler}>
             <fieldset>
               <div className='form-group'>
-                <label htmlFor='exampleInputEmail1'>Name</label>
+                <label htmlFor='exampleInputEmail1' style={{ fontWeight: 'bold', fontSize: "1.0em" }}>Name</label>
                 <input
                   value={name}
                   onChange={e => setname(e.target.value)}
@@ -48,10 +66,11 @@ const UpdateProfile = ({ history }) => {
                   id='exampleInputEmail1'
                   aria-describedby='emailHelp'
                   placeholder='Enter Name'
+                  required
                 />
               </div>
               <div className='form-group'>
-                <label htmlFor='exampleInputEmail1'>Email address</label>
+                <label htmlFor='exampleInputEmail1' style={{ fontWeight: 'bold', fontSize: "1.0em",  marginTop: "10px" }}>Email address</label>
                 <input
                   value={email}
                   onChange={e => setemail(e.target.value)}
@@ -60,26 +79,29 @@ const UpdateProfile = ({ history }) => {
                   id='exampleInputEmail1'
                   aria-describedby='emailHelp'
                   placeholder='Enter email'
+                  required
                 />
               </div>
-              <div className='form-group'>
-                <label htmlFor='exampleInputPassword1'>Password</label>
+              <div className='form-group' style={{margin: '10px 0px 10px 0'}}>
+                <label htmlFor='exampleInputPassword1' style={{ fontWeight: 'bold', fontSize: "1.0em" }}>Password</label>
                 <input
                   value={password}
                   onChange={e => setpassword(e.target.value)}
                   type='password'
                   className='form-control'
                   id='exampleInputPassword1'
-                  placeholder='Password'
+                  placeholder='Type your password...'
+                  required
                 />
               </div>
-              <button type='submit' className='btn btn-primary m-auto'>
-                Update your profile
+              <button type='submit' className='btn btn-primary m-auto' style={buttonStyle}>
+                Update Profile
               </button>
             </fieldset>
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };

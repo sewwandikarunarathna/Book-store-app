@@ -41,8 +41,6 @@ app.listen(PORT, ()=>{
     console.log(`Server is running on ${PORT}`);
 })
 
-// sewwandik
-// INV9hTqDoqqIzmMF
-// mongodb+srv://sewwandik:<password>@book-keep-app.vmdhnnv.mongodb.net/test
+
 
 // NOTE->usage of nodemon - using "npm run server" we can run the node app initially, then it will run automatically.

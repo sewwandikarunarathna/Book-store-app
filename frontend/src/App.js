@@ -9,6 +9,7 @@ import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
 import UpdateProfile from "./components/Profile/UpdateProfile";
 import Users from "./components/Users/Users";
+import UpdateBook from "./components/Books/UpdateBook";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/user-update" Component={UpdateProfile} />
           <Route exact path="/books" Component={Books} />
           <Route exact path="/addbook" Component={AddBook} />
+          <Route exact path="/update-book/:id" Component={UpdateBook} />
           <Route exact path="/register" Component={Register} />
           <Route exact path="/login" Component={Login} />
           <Route exact path="/users" Component={Users} />

@@ -8,6 +8,9 @@ import userReducer from "../reducers/users/userAuthReducer";
 import userProfileReducer from "../reducers/users/userProfileReducer";
 import updateUserProfileReducer from "../reducers/users/updateUserProfileReducer";
 import fetchUsersReducer from "../reducers/users/fetchUsersReducer";
+import { updateBookReducer } from "../reducers/books/updateBookReducer";
+import singleBookReducer from "../reducers/books/singleBookReducer";
+import { deleteBookReducer } from "../reducers/books/deleteBookReducer";
 
 //middleware passing to the store
 const middlewares = [thunk];
@@ -18,7 +21,10 @@ const reducer = combineReducers({
   bookList: bookListReducer,
   userProfile: userProfileReducer,
   updatedUser: updateUserProfileReducer,
-  allUsers: fetchUsersReducer
+  allUsers: fetchUsersReducer,
+  bookUpdated: updateBookReducer,
+  bookFetched: singleBookReducer,
+  bookDeleted: deleteBookReducer
 });
 
 //get user from localstorage and save it into store

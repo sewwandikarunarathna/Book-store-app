@@ -82,4 +82,19 @@ bookRoute.delete('/:id',
     })
 );
 
+//find a single book
+bookRoute.get(
+    '/:id',
+    asyncHandler(async (req, res) => {
+      try {
+        const book = await Book.findById(req.params.id);
+        res.status(200);
+        res.send(book);
+      } catch (error) {
+        res.status(500);
+        throw new Error('No book found');
+      }
+    })
+  );
+
 module.exports = bookRoute;

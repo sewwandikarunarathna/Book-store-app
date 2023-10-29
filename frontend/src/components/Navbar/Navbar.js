@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUserAction } from "../../redux/actions/users/userActions";
+import "./Navbar.css";
 
 const Navbar = () => {
   const state = useSelector((state) => state.userLogin);
